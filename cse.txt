@@ -1,0 +1,3 @@
+Computer engineering is a multidisciplinary field that combines electrical engineering and computer science to design, develop, and integrate computer hardware and software systems.
+Overview
+Computer engineering focuses on both hardware and software aspects of computing, bridging the gap between electrical engineering and computer science. It involves designing microprocessors, embedded systems, circuit boards, and complete computer systems, as well as developing software, firmware, and operating systems that control these devices. The field also covers areas such as artificial intelligence (AI), robotics, computer networks, computer architecture, and multimedia systems.
