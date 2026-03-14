@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+    // agent any //used to run all stages in any slave nodes, it will select the slave node automatically
+    agent {label 'slave2'}
     stages {
         stage('stage1') {
             steps {
