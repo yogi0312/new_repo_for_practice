@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('stage1') {
+            steps {
+                sh '''
+                #!/bin/bash
+                pwd
+                ls -lrt
+                sleep 5
+            '''
+            }
+        }
+        stage('stage2') {
+            steps {
+                script{
+                    def country ='Karnataka is in India'
+                    def country_upper = country.toUpperCase()
+                    echo country_upper
+                }
+            }
+        }
+        stage ('stage3') {
+            steps {
+                script{
+                    def list_data = ['Yogesh','Tushanth','Basavaraj',1,2,3,true,2.5]
+                    echo "List: ${list_data}"
+                    echo "Length: ${list_data.size()}"
+                }
+            }
+        }
+    }
+}
