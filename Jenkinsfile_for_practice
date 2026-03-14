@@ -1,8 +1,10 @@
 pipeline {
-    // agent any //used to run all stages in any slave nodes, it will select the slave node automatically
-    agent {label 'slave2'}
+    // agent any (used to run all stages in any slave nodes, it will select the slave node automatically)
+    // agent {label 'slave2'} (It runs all the stages on slave2 i.e. used to run on a particular node)
+    agent none // (different stages need to run on different agents/nodes)
     stages {
         stage('stage1') {
+            agent {label 'slave3'}
             steps {
                 sh '''
                 #!/bin/bash
@@ -13,15 +15,17 @@ pipeline {
             }
         }
         stage('stage2') {
+            agent {label 'slave1'}
             steps {
                 script{
-                    def country ='Karnataka is in India'
+                    def country ='Tushanth is my son'
                     def country_upper = country.toUpperCase()
                     echo country_upper
                 }
             }
         }
         stage ('stage3') {
+            agent {label 'slave2'}
             steps {
                 script{
                     def list_data = ['Yogesh','Tushanth','Basavaraj',1,2,3,true,2.5]
